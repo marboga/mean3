@@ -18,9 +18,9 @@ MyApp.controller('usersController', function($scope, $location, userFactory, app
 		console.log('LOGGING OUT')
 		userFactory.logout(function(data){
 		})
-			$scope.user = undefined
-			var name = undefined
+			$scope.user = undefined;
 			$location.url('/')
+			getUser()
 	}
 
 	function getUser(){

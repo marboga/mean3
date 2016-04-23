@@ -22,6 +22,7 @@ MyApp.factory('userFactory', function($http){
 		factory.logout = function(){
 			console.log('running logout function')
 			factory.user = undefined;
+			
 		}
 
 

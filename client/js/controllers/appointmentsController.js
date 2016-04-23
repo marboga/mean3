@@ -1,7 +1,7 @@
 console.log('appointmentsController loaded');
 
 MyApp.controller('appointmentsController', function($scope, appointmentFactory, userFactory, $location, moment){
-	$scope.user = userFactory.user;
+	$scope.user = userFactory.user
 	$scope.currentDate = new Date();
 	$scope.errors = ""
 	$scope.appointments = {}
