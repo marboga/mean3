@@ -2,3 +2,10 @@ div.container {
 	width: 100%
 	font-family: 'PT Serif', serif;
 }
+.pull-right{
+	margin-right: 5px;
+}
+.newAppointment{
+	width: 70%;
+	margin: 0 auto;
+}

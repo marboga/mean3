@@ -15,9 +15,11 @@
 
 		<!-- factories go first -->
 		<script type="text/javascript" src="./js/factories/userFactory.js"></script>
+		<script type="text/javascript" src="./js/factories/appointmentFactory.js"></script>
 
 		<!-- then controllers -->
 		<script type="text/javascript" src="./js/controllers/usersController.js"></script>
+		<script type="text/javascript" src="./js/controllers/appointmentsController.js"></script>
 
 
 		<!-- routes last -->
@@ -28,8 +30,8 @@
 	</head>
 	<body>
 		<!-- this so we actually can use our links -->
-		<div ng-controller="usersController">
-			<a href="#/">Home</a> | <a href="#/">Users</a>
+		<div  class="container" ng-controller="usersController">
+			<a class="pull-right" ng-click="logout()" href="#/">Logout</a>
 			<br><br>
 		</div>
 		<!-- this so we can show our partials -->
