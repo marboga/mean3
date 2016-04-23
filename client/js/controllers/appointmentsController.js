@@ -27,15 +27,15 @@ MyApp.controller('appointmentsController', function($scope, appointmentFactory, 
 		console.log("currID ===",currID)
 		$scope.new_appt._patient = currID
 
-		// if($scope.new_appt.dateBit && $scope.new_appt.time){
-		// 	console.log('in IF STAtEMENT')
-		// 	var m =moment($scope.new_appt.dateBit)
-		// 	m.add($scope.new_appt.time)
-		// 	console.log(m);
-		// }
-		// else{
-		// $scope.errors.push('Date and time are required.')
-		// }
+		if($scope.new_appt.date && $scope.new_appt.time){
+			console.log('in IF STAtEMENT')
+			var dt =moment($scope.new_appt.date)
+			var tm = moment($scope.new_appt.time)
+			console.log(dt, tm);
+		}
+		else{
+		$scope.errors.push('Date and time are required.')
+		}
 
 		appointmentFactory.create($scope.new_appt, function($scope, appointmentFactory){
 			console.log('came back from factory')

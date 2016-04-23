@@ -24,8 +24,10 @@ module.exports = function(app){
 		console.log('new appt coming in server', req.body)
 		appointments.create(req, res);
 	})
-
-
+	app.post('/appointments/:id/delete', function(req, res){
+		console.log('deleting appt', req.body)
+		appointments.delete(req, res);
+	})
 
 }
 //RESTFUL syntax

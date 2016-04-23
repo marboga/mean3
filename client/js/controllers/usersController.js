@@ -21,7 +21,6 @@ MyApp.controller('usersController', function($scope, $location, userFactory, app
 			$scope.user = undefined
 			var name = undefined
 			$location.url('/')
-			getUser()
 	}
 
 	function getUser(){
@@ -47,5 +46,10 @@ MyApp.controller('usersController', function($scope, $location, userFactory, app
 	}
 	getAppointments();
 
+	$scope.removeAppt = function(appt){
+		appointmentFactory.delete(appt, function(data){
+			console.log({message: 'made it back'})
+		})
+	}
 
 })

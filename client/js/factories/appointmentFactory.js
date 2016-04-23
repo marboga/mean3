@@ -17,6 +17,12 @@ MyApp.factory('appointmentFactory', function($http){
 		})
 	}
 
+	factory.delete = function(info){
+		console.log('deleting', info);
+		$http.post('/appointments/'+info+'/delete').success(function(info){
+			console.log('deleted.')
+		})
+	}
 
 	return factory;
 })

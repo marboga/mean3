@@ -37,7 +37,17 @@ module.exports = {
 			}
 		})
 	},
-
+	delete: function(req, res){
+		console.log('trying to delete appt #', req.params.id)
+		Appointment.findOneAndRemove({_id: req.params.id}, function(err, appt){
+			if (err){
+				console.log(err)
+				res.json(err)
+			}else{
+				res.json('successfully deleted ')
+			}
+		})
+	}
 
 
 

@@ -12,28 +12,16 @@
 		<th>Issue</th>
 	</thead>
 	<tbody>
-		<td>
-			asfgasf
-		</td>
-		<td>
-			asfa
-		</td>
-		<td>
-			asd
-		</td>
-		<td>
-			asdads
-		</td>
-		<tr ng-repeat="appt in appointments ">
+		<tr ng-repeat="appt in appointments | orderBy:'date' | filter:filter_input">
 			<td>{{ appt.date | date }}</td>
-			<td>{{ appt.date  }}</td>
+			<td>{{ appt.time | date:"shortTime" }}</td>
 			<td>{{ appt._patient.name }}</td>
 			<td>
 				{{ appt.issue }}
 				<span>
 					<a ng-if="user._id == appt._patient._id"
 					href="#/delete/
-					{{ appt._id }}">cancel</a>
+					{{ appt._id }}" ng-click="removeAppt(appt._id)">cancel appointment</a>
 				</span>
 			</td>
 		</tr>
