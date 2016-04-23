@@ -1,20 +1,18 @@
 <div class="newAppointment" ng-controller="appointmentsController">
 	<h1>New Appointment for {{ user.name }}</h1>
-	<label for="date">Date: </label>
-	<input type="date" name="date" ng-model="new_appt.date"
-       placeholder="yyyy-MM-dd" min="{{currentDate}}" max="2018-01-01" required /><br>
-	<label for="timeInput">Time: </label>
-	<input type="time" name="timeInput" ng-model="new_appt.time"
-       placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" required />
-   <div role="alert">
-		{{errors}}
-     <span class="error" ng-show="myForm.input.$error.required">
-         Required!</span>
-     <span class="error" ng-show="myForm.input.$error.time">
-         Not a valid date!</span>
-   </div><br>
-	<label for="issue">Issue: </label>
-	<textarea name="issue" rows="8" cols="60" required ng-model="new_appt.issue"></textarea><br><br>
-	<a class="btn btn-danger" href="#/">Cancel</a>
-	<input class="btn btn-primary" type="submit" name="name" ng-click="newAppointment(new_appt)">
+	<div class="newAppoint">
+		<label for="date">Date: </label>
+		<input type="date" name="date" ng-model="new_appt.date"
+	       placeholder="yyyy-MM-dd" min="{{currentDate}}" max="2018-01-01"  /><br>
+		<label for="timeInput">Time: </label>
+		<input type="time" name="timeInput" ng-model="new_appt.time"
+	       placeholder="HH:mm" min="09:00" max="17:00" default="09:00:00" />
+	   <h4 role="alert" style="color: red; font-size: 24pt;">
+			{{errors}}
+	   </h4><br>
+		<label for="BigIssue">Issue: </label>
+		<textarea name="BigIssue" rows="8" cols="60"  ng-model="new_appt.issue" required ng-minlength="10"></textarea><br><br>
+		<a class="btn btn-danger" href="#/">Cancel</a>
+		<input class="btn btn-primary" type="submit" name="name" ng-click="newAppointment(new_appt)">
+	</div>
 </div>
